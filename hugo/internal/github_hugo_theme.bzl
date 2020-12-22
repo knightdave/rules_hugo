@@ -10,8 +10,8 @@ filegroup(
 
 DEFAULT_GITHUB_HOST = "github.com"
 
-def github_hugo_theme(name, owner, repo, commit, github_host, **kwargs):
-    if "github_host" in kwargs:
+def github_hugo_theme(name, owner, repo, commit, github_host=None, **kwargs):
+    if github_host:
         url = "https://{github_host}/{owner}/{repo}/archive/{commit}.zip".format(
             owner = owner,
             repo = repo,
